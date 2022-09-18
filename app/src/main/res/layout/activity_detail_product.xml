@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.example.topic4chapt3.DataProduct" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".DetailProduct">
+
+        <TextView
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Detail Product"
+            android:textAlignment="center"
+            />
+        <ImageView
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="150dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:setImageResource='@{data.imgProduct}'/>
+        <TextView
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text='@{data.nameProduct, default= "Nama Product"}'
+            android:textAlignment="center"
+            />
+        <TextView
+            android:textSize="18dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text='@{data.price, default= "Price"}'
+            android:textAlignment="center"
+            />
+        <TextView
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text='@{data.descProduct, default= "Lorem Ipsum Dolor"}'
+            android:textAlignment="center"
+            />
+        <Button
+            android:id="@+id/button"
+            android:layout_margin="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bgcard"
+            android:text="Buy Now"/>
+
+    </LinearLayout>
+</layout>

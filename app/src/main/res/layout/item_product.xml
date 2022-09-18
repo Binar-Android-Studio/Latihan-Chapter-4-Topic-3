@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="product"
+            type="com.example.topic4chapt3.DataProduct" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/productnya"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp">
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bgcard"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/imgproduct"
+                app:setImageResource='@{product.imgProduct}'
+                android:layout_width="60dp"
+                android:layout_height="60dp" />
+
+            <TextView
+                android:id="@+id/productname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/imgproduct"
+                android:text='@{product.nameProduct, default = "Nama Produk"}'
+                tools:ignore="InvalidId"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/imgproduct"
+                android:layout_below="@id/productname"
+                android:text='@{product.price, default = "$50 Dolar"}'
+                android:id="@+id/productharga"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
